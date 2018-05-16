@@ -23,12 +23,10 @@ RUN apt-get update && apt-get install -y  \
     liblzo2-2
 
 # DOWNLOAD
-ENV OPENCV_VER 3.4.1
+ENV OPENCV_VER 2.4.13
 
 RUN wget -O opencv.zip "https://github.com/Itseez/opencv/archive/${OPENCV_VER}.zip" \
     && unzip opencv.zip
-RUN wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/${OPENCV_VER}.zip \
-    && unzip opencv_contrib.zip
 
 # INSTALL PIP
 RUN wget https://bootstrap.pypa.io/get-pip.py \
@@ -44,7 +42,6 @@ RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D INSTALL_PYTHON_EXAMPLES=ON \
     -D INSTALL_C_EXAMPLES=OFF \
-    -D OPENCV_EXTRA_MODULES_PATH="/opencv_contrib-${OPENCV_VER}/modules" \
     -D PYTHON_EXECUTABLE=/usr/bin/python3 \
     -D BUILD_EXAMPLES=ON ..
 

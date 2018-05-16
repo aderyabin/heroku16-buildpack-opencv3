@@ -6,7 +6,7 @@ RUN mkdir -p ${APP_DIR}
 WORKDIR ${APP_DIR}
 
 # Download compiled OpenCV3
-RUN curl -s -L "https://static.fountain.com/heroku16-buildpack-opencv3.4.1-v4.tar.gz" > vendor.tar.xz \
+RUN curl -s -L "https://static.fountain.com/heroku16-buildpack-opencv2.4.13-v4.tar.gz" > vendor.tar.xz \
     && tar -xvf vendor.tar.xz
 
 # Install pip and libraries

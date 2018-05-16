@@ -5,7 +5,7 @@
 A complete environment was created using the Dockerfile file based on the heroku stack v16.
 
 This includes the following:
-- Opencv-3.4.1.
+- Opencv-2.4.13.
 - Supporting Go lang binding. ([gocv](https://github.com/hybridgroup/gocv))
 
 Go lang setup:
